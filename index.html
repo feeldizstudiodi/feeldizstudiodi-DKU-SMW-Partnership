@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단국대학교 - 서울무비웍스 협약 혜택 안내</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #005abc 0%, #003d8f 100%);
+            color: white;
+            padding: 35px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .intro-section {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #005abc;
+        }
+        
+        .intro-section h2 {
+            color: #005abc;
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .intro-section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #495057;
+            margin: 6px 0;
+        }
+        
+        .benefits-section {
+            padding: 25px 25px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #343a40;
+            margin: 0 0 15px 0;
+            text-align: center;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: 50.5%;
+            transform: translateX(-50%);
+            width: 155px;
+            height: 3px;
+            background: linear-gradient(90deg, #005abc, #003d8f);
+            border-radius: 2px;
+            display: none;
+        }
+        
+        .benefit-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #005abc, #003d8f);
+        }
+        
+        .benefit-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #343a40;
+            margin: 0 0 14px 0;
+            padding-left: 15px;
+        }
+        
+        .price-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 14px 0;
+            flex-wrap: wrap;
+        }
+        
+        .original-price {
+            font-size: 20px;
+            color: #dc3545;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .arrow {
+            font-size: 24px;
+            color: #005abc;
+            font-weight: bold;
+        }
+        
+        .discount-price {
+            font-size: 30px;
+            color: #28a745;
+            font-weight: 700;
+        }
+        
+        .discount-badge {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 8px;
+        }
+        
+        .included-items {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 14px;
+        }
+        
+        .included-items h4 {
+            color: #495057;
+            font-size: 14px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .included-items ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .included-items li {
+            margin: 7px 0;
+            color: #495057;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .contact-section {
+            background: #f8f9fa;
+            padding: 25px 30px;
+            border-top: 3px solid #005abc;
+        }
+        
+        .contact-section h3 {
+            color: #343a40;
+            font-size: 18px;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        
+        .contact-info {
+            text-align: center;
+            color: #495057;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
+        .contact-info strong {
+            color: #343a40;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 18px 30px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 3px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .price-comparison {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .original-price {
+                font-size: 18px;
+            }
+            
+            .discount-price {
+                font-size: 26px;
+            }
+            
+            .arrow {
+                transform: rotate(90deg);
+            }
+      
+            /* 📱 모바일 여백 / 폭 최적화 */
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+    }    
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>단국대학교 문화예술대학원 ✕ 서울무비웍스</h1>
+            <div class="subtitle">교류협력 협약 특별 혜택 안내</div>
+        </div>
+        
+        <div class="intro-section">
+            <h2>🎬 협약 소개</h2>
+            <p>
+                <strong>서울무비웍스</strong>는 <strong>단국대학교 문화예술대학원</strong>과 교류협력 협약을 체결하여,
+                미래의 영화 제작자를 위한 특별한 혜택을 제공합니다.
+            </p>
+            <p>
+                <strong>전문적인 촬영장비 렌탈과 DI(Digital Intermediate) 작업</strong>을 합리적인 가격으로 경험하고,
+                여러분의 작품을 최고의 품질로 완성해보세요.
+            </p>
+        </div>
+        
+        <div class="benefits-section">
+            <div class="section-title">📋 협약 혜택 내역</div>
+            
+            
+            <!-- 시네마 촬영장비 렌탈 -->
+            <div class="benefit-card">
+                <div class="benefit-title">🎥 시네마 촬영장비 렌탈 (ARRI ALEXA MINI SET 기준)</div>
+
+                <div class="price-comparison">
+                    <span class="original-price">₩10,000,000/월</span>
+                    <span class="arrow">→</span>
+                    <div style="text-align: center;">
+                        <span class="discount-price">₩5,000,000</span>
+                        <span class="discount-badge">50% 할인</span>
+                    </div>
+                </div>
+
+                <div class="included-items">
+                    <h4>✅ 서비스 상세</h4>
+                    <ul>
+                        <li><strong>렌즈 포함</strong>(종류는 협의 하에 결정)</li>
+                        <li>TRIPOD 등 <strong>악세사리 포함</strong></li>
+                        <li><strong>1달(15회차)</strong> 기준</li>
+                        <li><strong>NAS서버 스토리지 무료 제공</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+<!-- 장편영화 색보정 -->
+            <div class="benefit-card">
+                <div class="benefit-title">🎨 장편영화 DI 작업</div>
+                
+                <div class="price-comparison">
+                    <span class="original-price">₩5,000,000</span>
+                    <span class="arrow">→</span>
+                    <div style="text-align: center;">
+                        <span class="discount-price">₩2,000,000</span>
+                        <span class="discount-badge">60% 할인</span>
+                    </div>
+                </div>
+                
+                <div class="included-items">
+                    <h4>✅ 서비스 상세</h4>
+                    <ul>
+                        <li><strong>전문 컬러리스트</strong>의 장편영화 색보정 작업</li>
+                        <li><strong>영화제 제출용 MOV 파일</strong> 출력 (ProRes 422 HQ 이상)</li>
+                        <li><strong>본편 상영용 DCP</strong> (Digital Cinema Package) 1회 포함</li>
+                        <li>최종 검수 및 QC (Quality Control) 진행</li>
+                        <li><strong>NAS서버 스토리지 무료 제공</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- DCP 마스터링 서비스 -->
+            <div class="benefit-card">
+                <div class="benefit-title">
+                    💿 DCP 마스터링 단독 서비스
+                </div>
+                
+                <div class="price-comparison">
+                    <span class="original-price">₩500,000</span>
+                    <span class="arrow">→</span>
+                    <div style="text-align: center;">
+                        <span class="discount-price" style="font-size: 28px;">₩100,000</span>
+                        <span class="discount-badge">80% 할인</span>
+                    </div>
+                </div>
+                
+                <div class="included-items">
+                    <h4>✅ 서비스 상세</h4>
+                    <ul>
+                        <li>극장 상영용 <strong>DCP 패키징</strong></li>
+                        <li>DLP 프로젝터 <strong>스크린 시사 1회</strong> 제공</li>
+                        <li>상영 테스트 및 QC 진행</li>
+                        <li><strong>NAS서버 스토리지 무료 제공</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- NAS서버 스토리지 -->
+            <div class="benefit-card">
+                <div class="benefit-title">
+                    💾 고용량 Raid 스토리지(160TB) 렌탈 서비스
+                </div>
+                
+                <div class="price-comparison">
+                    <span class="original-price">₩1,000,000/월</span>
+                    <span class="arrow">→</span>
+                    <div style="text-align: center;">
+                        <span class="discount-price" style="font-size: 28px;">300,000/월</span>
+                        <span class="discount-badge">70% 할인</span>
+                    </div>
+                </div>
+                
+                <div class="included-items">
+                    <h4>✅ 서비스 상세</h4>
+                    <ul>
+                        <li>ARC-8050T3U 12-Bay, <strong> 160TB</strong></li>
+                        <li><strong>Thunderbolt™ 3</strong> 지원 고속 스토리지 </li>
+                        <li>1달이하 단기 이용 시 협의</li>
+                        <li><strong>NAS서버 스토리지 무료 제공</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="caution-section" style="background:#fff3cd; border-left:6px solid #ffca2c; padding:20px 25px; margin:25px 25px; border-radius:10px;">
+            <h3 style="margin-top:0; color:#856404; font-size:18px; font-weight:700;">⚠️ 주의사항</h3>
+            <ul style="margin:10px 0 0 0; color:#5c5003; font-size:14px; line-height:1.6;">
+                <li><strong>촬영장비 렌탈</strong> - 기본 세트 구성품 외의 제품으로 변경 시 가격이 변동될 수 있습니다.</li>
+                <li><strong>색보정 작업</strong> - 효율적인 작업을 위해 편집 XML 규격 등 작업자가 안내드리는 워크플로우를 준수해 주세요.</li>
+                <li><strong>DCP 마스터링</strong> - DCP 파일 전달용 외장하드는 서비스에 포함되어 있지 않습니다. 사용 중인 외장하드를 제공해 주시거나 구매해 주시기 바랍니다.</li>
+                <li><strong>모든 금액은 부가세 별도입니다.</strong>
+            </ul>
+        </div>
+
+
+        <div class="contact-section">
+            <h3>📞 문의 및 상담</h3>
+            <div class="contact-info">
+                <p>작업 의뢰 전 언제든지 편하게 연락 주세요. 프로젝트에 대한 상담을 도와드립니다.</p>
+                <p style="margin-top: 15px;">
+                    <strong>담당자:</strong> 최종성 | 
+                    <strong>전화:</strong> 010-7411-1841 | 
+                    <strong>이메일:</strong> feeldiz.studio.di@gmail.com
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong style="font-size: 16px;">서울무비웍스 | Seoul Movie Works</strong></p>
+            <p>서울특별시 강남구 학동로3길 32, 1층(논현동, 명성빌딩)</p>
+            <p>전화: 02-516-8031 | 이메일: seoulmw@naver.com
